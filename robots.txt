@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://btw-design.github.io/travel-insurance/sitemap.xml
