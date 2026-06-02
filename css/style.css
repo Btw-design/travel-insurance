@@ -230,8 +230,92 @@ img {
 }
 
 .logo-icon {
-  font-size: 26px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(135deg, var(--royal-blue), var(--deep-blue));
+  border-radius: 8px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
   line-height: 1;
+}
+
+/* SVG Icon Classes — Professional replacements for emoji */
+.icon-info {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+.icon-info svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.icon-warning {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  color: var(--orange);
+}
+.icon-warning svg {
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.icon-tip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  color: var(--royal-blue);
+}
+.icon-tip svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.icon-tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+.icon-tag svg {
+  width: 14px;
+  height: 14px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 .logo-text {
@@ -645,6 +729,26 @@ a:hover .blog-meta {
   font-size: 17px;
   color: var(--text);
   line-height: 1.9;
+}
+
+.blog-article-body h2 {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--dark);
+  margin: 48px 0 16px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--light-gray);
+}
+
+.blog-article-body h2:first-child {
+  margin-top: 0;
+}
+
+.blog-article-body h3 {
+  font-size: 19px;
+  font-weight: 600;
+  color: var(--dark);
+  margin: 28px 0 12px;
 }
 
 .blog-article-body h4 {
@@ -1342,9 +1446,7 @@ a:hover .blog-meta {
 }
 
 .faq-icon {
-  font-size: 12px;
   transition: var(--transition);
-  color: var(--royal-blue);
   flex-shrink: 0;
   width: 24px;
   height: 24px;
@@ -1353,6 +1455,25 @@ a:hover .blog-meta {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.faq-icon::after {
+  content: '';
+  display: block;
+  width: 12px;
+  height: 12px;
+  background: var(--royal-blue);
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E") center/contain no-repeat;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E") center/contain no-repeat;
+}
+
+.faq-item.active .faq-icon {
+  transform: rotate(180deg);
+  background: var(--royal-blue);
+}
+
+.faq-item.active .faq-icon::after {
+  background: #fff;
 }
 
 .faq-item.active .faq-icon {
