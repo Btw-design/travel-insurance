@@ -4,7 +4,6 @@
    Features:
    1. Hamburger Menu Toggle (Mobile Navigation)
    2. FAQ Accordion
-   3. Blog Card Toggle (Legacy)
    ============================================ */
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -50,35 +49,6 @@ document.addEventListener('DOMContentLoaded', function () {
           other.parentElement.classList.remove('active');
         }
       });
-    });
-  });
-
-  /* ------------------------------------------
-     3. Blog Card Toggle (Legacy)
-     Usage: Click .blog-card-link to expand article inline
-     Note: No longer used since blog uses flat HTML files
-     ------------------------------------------ */
-  var blogCards = document.querySelectorAll('.blog-card-link');
-
-  blogCards.forEach(function (link) {
-    link.addEventListener('click', function (e) {
-      e.preventDefault();
-      var card = this.closest('.blog-card');
-      var article = card.querySelector('.blog-article-full');
-
-      if (article) {
-        var isOpen = card.classList.contains('expanded');
-
-        // Close all expanded cards
-        document.querySelectorAll('.blog-card.expanded').forEach(function (x) {
-          x.classList.remove('expanded');
-        });
-
-        // Open clicked card if it wasn't already open
-        if (!isOpen) {
-          card.classList.add('expanded');
-        }
-      }
     });
   });
 
