@@ -7,14 +7,47 @@
   <!-- PAGE INFO -->
   <title>Article Title — Travel Insurance Info</title>
   <meta name="description" content="SEO description (150-160 chars) describing this article.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://travelinsuranceinfo.in/blog/ARTICLE-SLUG/">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <!-- Stylesheet: Use "../css/style.css" for blog/ folder pages -->
-  <link rel="stylesheet" href="../css/style.css">
+  <!-- Stylesheet: Use absolute path -->
+  <link rel="stylesheet" href="/css/style.css">
+
+  <!-- JSON-LD: Article Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Article Title",
+    "description": "Brief description of the article.",
+    "author": {"@type": "Organization", "name": "Travel Insurance Info"},
+    "datePublished": "2026-01-01",
+    "dateModified": "2026-06-01"
+  }
+  </script>
+
+  <!-- JSON-LD: FAQPage Schema (for articles with FAQs) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "FAQ Question 1?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "FAQ Answer 1."
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -23,30 +56,30 @@
        ========================================== -->
   <div class="top-bar">
     <div class="container">
-      <span>&#9432; Informational Website — IRDAI Compliant. We do not sell insurance.</span>
+      <span class="icon-info">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+      </span>
+      <span>Informational Website — IRDAI Compliant. We do not sell insurance.</span>
       <a href="https://irdai.gov.in/" target="_blank" rel="noopener">Visit IRDAI &rarr;</a>
     </div>
   </div>
 
   <!-- ==========================================
        NAVIGATION
-       NOTE: Blog articles use "../" prefix for root paths
        ========================================== -->
   <nav class="navbar">
     <div class="nav-container">
-      <a href="../index.html" class="logo">
-        <span class="logo-icon">&#9992;</span>
+      <a href="/" class="logo">
+        <span class="logo-icon">TI</span>
         <span class="logo-text">Travel <span>Insurance Info</span></span>
       </a>
-
       <ul class="nav-links">
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="../about.html">About</a></li>
-        <li><a href="../blog.html">Blog</a></li>
-        <li><a href="../faq.html">FAQ</a></li>
-        <li><a href="../contact.html">Contact</a></li>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/faq/">FAQ</a></li>
+        <li><a href="/contact/">Contact</a></li>
       </ul>
-
       <button class="hamburger" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
@@ -54,35 +87,14 @@
   </nav>
 
   <!-- ==========================================
-       ARTICLE HERO
+       BLOG ARTICLE HERO
        ========================================== -->
-  <section class="blog-article-hero">
+  <section class="page-hero blog-article-hero">
     <div class="container">
-
-      <!-- Breadcrumb -->
-      <div class="blog-article-breadcrumb">
-        <a href="../index.html">Home</a>
-        <span>/</span>
-        <a href="../blog.html">Blog</a>
-        <span>/</span>
-        <span>Category</span>
+      <div class="page-hero-content">
+        <div class="page-hero-tag">Travel Insurance Guide</div>
+        <h1>Article Heading (H1)</h1>
       </div>
-
-      <!-- Tag -->
-      <span class="blog-article-tag">&#128218; Category</span>
-
-      <!-- Title -->
-      <h1>Article Title: Complete Guide</h1>
-
-      <!-- Meta -->
-      <div class="blog-article-meta">
-        <span>Informational Guide</span>
-        <span class="blog-article-meta-divider"></span>
-        <span>IRDAI Compliant</span>
-        <span class="blog-article-meta-divider"></span>
-        <span>X min read</span>
-      </div>
-
     </div>
   </section>
 
@@ -91,40 +103,68 @@
        ========================================== -->
   <section class="section">
     <div class="container">
-      <div class="blog-article-container">
+      <div class="page-content">
+        <h2>Section Heading (H2)</h2>
+        <p>Article content goes here. Use proper heading hierarchy (H2 for main sections, H3 for subsections).</p>
 
-        <!-- Featured Image (replace src & alt) -->
-        <div class="blog-article-image">
-          <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=740&h=420&fit=crop"
-               alt="Descriptive alt text for the image"
-               loading="lazy">
-        </div>
+        <h3>Sub-section Heading (H3)</h3>
+        <p>More detailed content under this sub-section.</p>
 
-        <!-- Article Body -->
-        <div class="blog-article-body">
+        <ul>
+          <li>Bullet point item 1</li>
+          <li>Bullet point item 2</li>
+          <li>Bullet point item 3</li>
+        </ul>
 
-          <h4>Section Heading</h4>
-          <p>Paragraph content here. Keep paragraphs informative and concise. Use h4 for subheadings within the article.</p>
+        <!-- Add more sections as needed -->
+      </div>
+    </div>
+  </section>
 
-          <h4>Bullet Points</h4>
-          <ul>
-            <li><strong>Bold label:</strong> Description of the item.</li>
-            <li><strong>Important term:</strong> Explanation follows.</li>
-          </ul>
+  <!-- ==========================================
+       FAQ SECTION (if applicable)
+       ========================================== -->
+  <section class="section alt-bg">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">FAQs</span>
+        <h2>Frequently Asked Questions</h2>
+      </div>
+      <div class="faq-list">
 
-          <!-- Note box (for important callouts) -->
-          <div class="blog-note">
-            <span class="blog-note-icon">&#128161;</span>
-            <div>
-              <strong>Tip:</strong> Use note boxes for key takeaways or IRDAI-related reminders.
-            </div>
+        <div class="faq-item">
+          <button class="faq-question">FAQ Question 1? <span class="faq-icon"></span></button>
+          <div class="faq-answer">
+            <p>FAQ Answer 1 for the above question.</p>
           </div>
-
         </div>
 
-        <!-- Back to Articles button -->
-        <div class="blog-nav">
-          <a href="../blog.html">&larr; Back to Articles</a>
+        <div class="faq-item">
+          <button class="faq-question">FAQ Question 2? <span class="faq-icon"></span></button>
+          <div class="faq-answer">
+            <p>FAQ Answer 2 for the above question.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">FAQ Question 3? <span class="faq-icon"></span></button>
+          <div class="faq-answer">
+            <p>FAQ Answer 3 for the above question.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">FAQ Question 4? <span class="faq-icon"></span></button>
+          <div class="faq-answer">
+            <p>FAQ Answer 4 for the above question.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">FAQ Question 5? <span class="faq-icon"></span></button>
+          <div class="faq-answer">
+            <p>FAQ Answer 5 for the above question.</p>
+          </div>
         </div>
 
       </div>
@@ -134,27 +174,40 @@
   <!-- ==========================================
        RELATED ARTICLES
        ========================================== -->
-  <section class="section alt-bg">
+  <section class="section">
     <div class="container">
       <div class="blog-related">
         <h3>Related Articles</h3>
         <div class="blog-related-grid">
-
-          <a href="article-slug.html" class="blog-related-card">
-            <div class="tag">Category</div>
-            <h4>Related Article Title</h4>
+          <a href="/blog/travel-insurance-for-indian-travellers/" class="blog-related-card">
+            <div class="tag">Basics</div>
+            <h4>Travel Insurance for Indian Travellers</h4>
           </a>
-
-          <a href="article-slug.html" class="blog-related-card">
-            <div class="tag">Category</div>
-            <h4>Another Related Article</h4>
+          <a href="/blog/schengen-travel-insurance-guide/" class="blog-related-card">
+            <div class="tag">Visa</div>
+            <h4>Schengen Travel Insurance Guide</h4>
           </a>
-
-          <a href="article-slug.html" class="blog-related-card">
-            <div class="tag">Category</div>
-            <h4>Third Related Article</h4>
+          <a href="/blog/travel-insurance-exclusions/" class="blog-related-card">
+            <div class="tag">Exclusions</div>
+            <h4>Common Exclusions in Travel Insurance</h4>
           </a>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <!-- ==========================================
+       DISCLAIMER
+       ========================================== -->
+  <section class="section alt-bg">
+    <div class="container">
+      <div class="disclaimer-box">
+        <span class="icon-warning">
+          <svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        </span>
+        <div>
+          <strong>Disclaimer:</strong> We provide insurance-related information and updates for informational purposes only; we do not sell, promote, or consult on insurance products and are not licensed by IRDA.
+          <a href="/disclaimer/">Read full disclaimer &rarr;</a>
         </div>
       </div>
     </div>
@@ -162,7 +215,6 @@
 
   <!-- ==========================================
        FOOTER
-       NOTE: Blog pages use "../" prefix for root paths
        ========================================== -->
   <footer class="footer">
     <div class="container">
@@ -170,7 +222,7 @@
 
         <div class="footer-brand">
           <div class="logo">
-            <span class="logo-icon">&#9992;</span>
+            <span class="logo-icon">TI</span>
             <span style="color:#fff;">Travel Insurance Info</span>
           </div>
           <p>A free informational resource about travel insurance in India.</p>
@@ -178,11 +230,12 @@
 
         <div class="footer-col">
           <h4>Quick Links</h4>
-          <a href="../index.html">Home</a>
-          <a href="../about.html">About Us</a>
-          <a href="../blog.html">Blog</a>
-          <a href="../faq.html">FAQ</a>
-          <a href="../contact.html">Contact</a>
+          <a href="/">Home</a>
+          <a href="/about/">About Us</a>
+          <a href="/blog/">Blog</a>
+          <a href="/faq/">FAQ</a>
+          <a href="/contact/">Contact</a>
+          <a href="/privacy-policy/">Privacy Policy</a>
         </div>
 
         <div class="footer-col">
@@ -195,11 +248,10 @@
 
         <div class="footer-col">
           <h4>Contact</h4>
-          <a href="../contact.html">Get in Touch</a>
+          <a href="/contact/">Get in Touch</a>
         </div>
 
       </div>
-
       <div class="footer-bottom">
         <span>&copy; 2026 Travel Insurance Info. All rights reserved.</span>
         <span>Informational Website — Not a seller of insurance.</span>
@@ -207,6 +259,6 @@
     </div>
   </footer>
 
-  <script src="../js/main.js"></script>
+  <script src="/js/main.js"></script>
 </body>
 </html>
