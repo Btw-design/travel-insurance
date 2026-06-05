@@ -3,7 +3,8 @@
    ============================================
    Features:
    1. Hamburger Menu Toggle (Mobile Navigation)
-   2. FAQ Accordion
+   2. Cookie Consent
+   3. FAQ Accordion
    ============================================ */
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -142,5 +143,85 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     });
   });
+
+  /* ------------------------------------------
+     4. Contact Form Validation
+     Usage: Validates required fields, email format
+     ------------------------------------------ */
+  var contactForm = document.getElementById('contactForm');
+
+  if (contactForm) {
+    contactForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      var isValid = true;
+
+      // Full Name
+      var fullName = document.getElementById('fullName');
+      var fullNameError = document.getElementById('fullNameError');
+      if (fullName.value.trim() === '') {
+        fullName.classList.add('error');
+        fullNameError.textContent = 'Full name is required.';
+        isValid = false;
+      } else {
+        fullName.classList.remove('error');
+        fullNameError.textContent = '';
+      }
+
+      // Email
+      var email = document.getElementById('email');
+      var emailError = document.getElementById('emailError');
+      var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (email.value.trim() === '') {
+        email.classList.add('error');
+        emailError.textContent = 'Email address is required.';
+        isValid = false;
+      } else if (!emailPattern.test(email.value.trim())) {
+        email.classList.add('error');
+        emailError.textContent = 'Please enter a valid email address.';
+        isValid = false;
+      } else {
+        email.classList.remove('error');
+        emailError.textContent = '';
+      }
+
+      // Phone (optional)
+      var phone = document.getElementById('phone');
+      var phoneError = document.getElementById('phoneError');
+      if (phone.value.trim() !== '') {
+        var phoneDigits = phone.value.trim().replace(/[\s\-\+\(\)]/g, '');
+        if (phoneDigits.length < 7 || phoneDigits.length > 15) {
+          phone.classList.add('error');
+          phoneError.textContent = 'Please enter a valid phone number (7-15 digits).';
+          isValid = false;
+        } else {
+          phone.classList.remove('error');
+          phoneError.textContent = '';
+        }
+      } else {
+        phone.classList.remove('error');
+        phoneError.textContent = '';
+      }
+
+      // Message
+      var message = document.getElementById('message');
+      var messageError = document.getElementById('messageError');
+      if (message.value.trim() === '') {
+        message.classList.add('error');
+        messageError.textContent = 'Message is required.';
+        isValid = false;
+      } else {
+        message.classList.remove('error');
+        messageError.textContent = '';
+      }
+
+      // If valid, show success and reset form
+      if (isValid) {
+        contactForm.reset();
+        contactForm.style.display = 'none';
+        document.getElementById('formSuccess').classList.add('show');
+      }
+    });
+  }
 
 });
