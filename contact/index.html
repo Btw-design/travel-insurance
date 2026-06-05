@@ -135,7 +135,13 @@
             <div class="contact-form-wrap">
               <h3>Send Us a Message</h3>
               <p>Fill out the form below and we will get back to you within 2 to 3 business days.</p>
-              <form class="contact-form" id="contactForm" novalidate>
+              <form class="contact-form" id="contactForm" action="https://formsubmit.co/leads@btwimf.com" method="POST" novalidate>
+                <!-- FormSubmit honeypot to prevent spam -->
+                <input type="text" name="_honey" style="display:none">
+                <!-- Disable captcha (optional) -->
+                <input type="hidden" name="_captcha" value="false">
+                <!-- Redirect back to contact page after submission -->
+                <input type="hidden" name="_next" value="https://travelinsuranceinfo.in/contact/#form-success">
                 <div class="form-group">
                   <label class="form-label" for="fullName">Full Name <span class="required">*</span></label>
                   <input class="form-input" type="text" id="fullName" name="fullName" placeholder="Your full name" required autocomplete="name">
