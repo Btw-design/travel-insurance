@@ -215,13 +215,26 @@ document.addEventListener('DOMContentLoaded', function () {
         messageError.textContent = '';
       }
 
-      // If valid, show success and reset form
+      // If valid, submit the form to FormSubmit
       if (isValid) {
-        contactForm.reset();
-        contactForm.style.display = 'none';
-        document.getElementById('formSuccess').classList.add('show');
+        contactForm.submit();
       }
     });
+  }
+
+  /* ------------------------------------------
+     5. Show success message after FormSubmit redirect
+     ------------------------------------------ */
+  if (window.location.hash === '#form-success') {
+    var formWrap = document.querySelector('.contact-form-wrap');
+    var form = document.getElementById('contactForm');
+    var success = document.getElementById('formSuccess');
+    if (formWrap && form && success) {
+      form.style.display = 'none';
+      success.classList.add('show');
+      // Clean up the URL hash
+      history.replaceState(null, '', window.location.pathname);
+    }
   }
 
 });
