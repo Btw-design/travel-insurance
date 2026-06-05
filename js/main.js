@@ -145,8 +145,8 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   /* ------------------------------------------
-     4. Contact Form Validation (Formspree)
-     Usage: Validates required fields, submits via AJAX
+     4. Contact Form Validation (EmailJS)
+     Usage: Validates required fields, sends via EmailJS
      ------------------------------------------ */
   var contactForm = document.getElementById('contactForm');
 
@@ -197,25 +197,20 @@ document.addEventListener('DOMContentLoaded', function () {
         messageError.textContent = '';
       }
 
-      // If valid, submit to Formspree via AJAX
+      // If valid, send via EmailJS
       if (isValid) {
-        var formData = new FormData(contactForm);
         var submitBtn = contactForm.querySelector('.btn-submit');
         submitBtn.textContent = 'Sending...';
         submitBtn.disabled = true;
 
-        fetch(contactForm.action, {
-          method: 'POST',
-          body: formData,
-          headers: { 'Accept': 'application/json' }
-        }).then(function (response) {
-          if (response.ok) {
-            contactForm.reset();
-            contactForm.style.display = 'none';
-            document.getElementById('formSuccess').classList.add('show');
-          } else {
-            alert('Something went wrong. Please try again.');
-          }
+        emailjs.sendForm(
+          'YOUR_SERVICE_ID',
+          'YOUR_TEMPLATE_ID',
+          e.target
+        ).then(function () {
+          contactForm.reset();
+          contactForm.style.display = 'none';
+          document.getElementById('formSuccess').classList.add('show');
         }).catch(function () {
           alert('Something went wrong. Please try again.');
         }).finally(function () {
